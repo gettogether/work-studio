@@ -1,0 +1,82 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BEBA8F00-B2B6-4DF0-81DF-D68B075FFDCE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeBuilderLibrary</RootNamespace>
+    <AssemblyName>CodeBuilderLibrary</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonLibrary, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CommonDLL\CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAccess, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CommonDLL\DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="DataMapping, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CommonDLL\DataMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\boColumns.cs" />
+    <Compile Include="BusinessObjects\boPks.cs" />
+    <Compile Include="BusinessObjects\boRemarks.cs" />
+    <Compile Include="BusinessObjects\boStoreProcedureParameters.cs" />
+    <Compile Include="BusinessObjects\boStoreProcedures.cs" />
+    <Compile Include="BusinessObjects\boTables.cs" />
+    <Compile Include="ColumnMapping.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="DataObjects\doColumns.cs" />
+    <Compile Include="DataObjects\doPKs.cs" />
+    <Compile Include="DataObjects\doRemarks.cs" />
+    <Compile Include="DataObjects\doStoreProcedureParameters.cs" />
+    <Compile Include="DataObjects\doStoreProcedures.cs" />
+    <Compile Include="DataObjects\doTables.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQL\CodeDataReader.cs" />
+    <Compile Include="SQL\CodeScript.cs" />
+    <Compile Include="SQL\CodeStoreProcedure.cs" />
+    <Compile Include="SQL\Util.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
